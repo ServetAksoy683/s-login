@@ -1,0 +1,32 @@
+name: S-Login
+version: 1.1.0
+main: com.slogin.SLogin
+api-version: '1.19'
+folia-supported: true
+author: Hadi
+description: Basit sifre korumali giris plugini - Paper/Folia destekli
+
+commands:
+  sregister:
+    description: Hesap olusturur (ilk kez giren oyuncular icin)
+    usage: /sregister <sifre> <sifre-tekrar>
+  slogin:
+    description: Mevcut hesaba giris yapar
+    usage: /slogin <sifre>
+  spasswordreset:
+    description: (Sadece yetkili) Bir oyuncunun sifresini sifirlar
+    usage: /spasswordreset <oyuncu>
+  schange:
+    description: Sifreni degistirir (onay icin /sconfirm gerekir)
+    usage: /schange <yeni-sifre> <yeni-sifre-tekrar>
+  sconfirm:
+    description: Bekleyen sifre degisikligini onaylar
+    usage: /sconfirm
+
+permissions:
+  slogin.use:
+    description: Temel sregister/slogin/schange/sconfirm komutlarini kullanma izni
+    default: true
+  slogin.admin:
+    description: /spasswordreset komutunu kullanma izni
+    default: op

@@ -1,0 +1,192 @@
+# =========================================
+#  S-Login Config
+# =========================================
+# language: turkish, russia veya english
+language: turkish
+
+# Giris yapmak icin tanilan sure (saniye). Sure dolunca oyuncu sunucudan atilir.
+login-timeout-seconds: 120
+
+# Art arda kac yanlis sifre denemesinden sonra oyuncu aninda atilsin.
+max-failed-attempts: 4
+
+# Sifrenin olmasi gereken minimum uzunluk.
+min-password-length: 4
+
+# Giris yapmadan once oyuncunun ekranini karartir (End'in icindeymis gibi hicbir sey goremez).
+blind-effect: true
+
+# Giris yapmadan once oyuncunun hareket etmesini engeller (oldugu yerde kalir).
+freeze-movement: true
+
+# Giris yapmadan once oyuncunun hasar almasini engeller (dusup olmesin diye).
+prevent-damage: true
+
+# Giris yapmadan once sohbet etmesini ve diger komutlari kullanmasini engeller.
+block-chat-and-commands: true
+
+# =========================================
+#  Ses efektleri. sound degerini bos birakirsan (sound: "") o olay icin ses calinmaz.
+# =========================================
+sounds:
+  register-success:
+    sound: "ENTITY_PLAYER_LEVELUP"
+    volume: 1.0
+    pitch: 1.2
+  login-success:
+    sound: "ENTITY_PLAYER_LEVELUP"
+    volume: 1.0
+    pitch: 1.5
+  wrong-password:
+    sound: "ENTITY_VILLAGER_NO"
+    volume: 1.0
+    pitch: 0.8
+  kicked:
+    sound: "ENTITY_ENDERMAN_TELEPORT"
+    volume: 1.0
+    pitch: 0.6
+  tick:
+    sound: "BLOCK_NOTE_BLOCK_HAT"
+    volume: 0.7
+    pitch: 1.8
+  tick-urgent:
+    sound: "BLOCK_NOTE_BLOCK_HAT"
+    volume: 1.0
+    pitch: 2.0
+  confirm-needed:
+    sound: "BLOCK_NOTE_BLOCK_BELL"
+    volume: 1.0
+    pitch: 1.0
+  confirmed:
+    sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+    volume: 1.0
+    pitch: 1.3
+  error:
+    sound: "ENTITY_VILLAGER_NO"
+    volume: 1.0
+    pitch: 0.8
+  admin-action:
+    sound: "ENTITY_ENDER_DRAGON_GROWL"
+    volume: 0.5
+    pitch: 1.4
+
+# =========================================
+#  Mesajlar (MiniMessage formati destekler)
+# =========================================
+messages:
+  turkish:
+    only-players: "<red>Bu komut sadece oyuncular tarafından kullanılabilir."
+    no-permission: "<red>Bu komutu kullanmaya yetkin yok."
+    player-not-found: "<red>Oyuncu bulunamadı: <white>%player%"
+
+    register-prompt: "<gold><bold>Hoş geldin!</bold></gold> <white>Hesabın yok, kayıt olman gerekiyor.\n<gray>Kullanım: <click:suggest_command:'/sregister '><underlined><white>/sregister <şifre> <şifre-tekrar></white></underlined></click> <gray>(tıkla, otomatik yazılsın)"
+    login-prompt: "<gold><bold>Tekrar hoş geldin!</bold></gold> <white>Giriş yapman gerekiyor.\n<gray>Kullanım: <click:suggest_command:'/slogin '><underlined><white>/slogin <şifre></white></underlined></click> <gray>(tıkla, otomatik yazılsın)"
+    reset-prompt: "<yellow>Şifren sıfırlandı. <white>Yeni bir şifre belirlemen gerekiyor.\n<gray>Kullanım: <click:suggest_command:'/schange '><underlined><white>/schange <yeni-şifre> <yeni-şifre-tekrar></white></underlined></click> <gray>(tıkla, otomatik yazılsın)"
+    register-hint: "<gray>Kayıt olmak için: <white>/sregister <şifre> <şifre-tekrar>"
+    login-hint: "<gray>Giriş yapmak için: <white>/slogin <şifre>"
+    reset-hint: "<gray>Yeni şifre belirlemek için: <white>/schange <yeni-şifre> <yeni-şifre-tekrar>"
+
+    already-registered: "<red>Zaten bir hesabın var, <white>/slogin<red> kullanmalısın."
+    not-registered: "<red>Henüz hesabın yok, önce <white>/sregister <şifre> <şifre-tekrar><red> ile kayıt olmalısın."
+    already-logged-in: "<green>Zaten giriş yaptın."
+    must-login-first: "<red>Önce giriş yapmalısın."
+    usage-register: "<gray>Kullanım: <white>/sregister <şifre> <şifre-tekrar>"
+    usage-login: "<gray>Kullanım: <white>/slogin <şifre>"
+    usage-change: "<gray>Kullanım: <white>/schange <yeni-şifre> <yeni-şifre-tekrar>"
+    usage-reset: "<gray>Kullanım: <white>/spasswordreset <oyuncu>"
+    passwords-dont-match: "<red>Girdiğin iki şifre birbirini tutmuyor."
+    password-too-short: "<red>Şifre en az <white>%min%<red> karakter olmalı."
+
+    register-success: "<gradient:#3ddc84:#00b894><bold>Kayıt başarılı!</bold> Artık etrafını görebilirsin."
+    login-success: "<gradient:#3ddc84:#00b894><bold>Giriş başarılı!</bold> Hoş geldin."
+    wrong-password: "<red>Yanlış şifre! <white>%attempts%/%max%<red> deneme hakkın kaldı."
+    kicked-wrong-password: "<red><bold>Çok fazla yanlış şifre denemesi yaptın.</bold>"
+    kicked-timeout: "<red><bold>Süre doldu, giriş yapmadın.</bold>"
+
+    change-pending: "<yellow>Yeni şifren alındı. <white>Onaylamak için <gold>/sconfirm<white> yaz."
+    confirm-nothing-pending: "<red>Onaylanacak bekleyen bir şifre değişikliğin yok."
+    confirm-success-relogin: "<gradient:#3ddc84:#00b894>Şifren değiştirildi. <white>Şimdi yeni şifrenle <gold>/slogin<white> yapman gerekiyor."
+    confirm-success: "<gradient:#3ddc84:#00b894>Şifren başarıyla değiştirildi."
+
+    reset-admin-success: "<green>%player% adlı oyuncunun şifresi sıfırlandı. <gray>Bir dahaki girişte yeni şifre belirlemesi gerekecek."
+    reset-player-notify: "<yellow>Şifren bir yetkili tarafından sıfırlandı."
+
+    timer-title: "<red><bold>Giriş yap! <white>%seconds%<red> saniye kaldı"
+
+  russia:
+    only-players: "<red>Эту команду могут использовать только игроки."
+    no-permission: "<red>У тебя нет прав для использования этой команды."
+    player-not-found: "<red>Игрок не найден: <white>%player%"
+
+    register-prompt: "<gold><bold>Добро пожаловать!</bold></gold> <white>У тебя нет аккаунта, нужно зарегистрироваться.\n<gray>Использование: <click:suggest_command:'/sregister '><underlined><white>/sregister <пароль> <повтор-пароля></white></underlined></click> <gray>(нажми, впишется само)"
+    login-prompt: "<gold><bold>С возвращением!</bold></gold> <white>Нужно войти в аккаунт.\n<gray>Использование: <click:suggest_command:'/slogin '><underlined><white>/slogin <пароль></white></underlined></click> <gray>(нажми, впишется само)"
+    reset-prompt: "<yellow>Твой пароль был сброшен. <white>Нужно задать новый пароль.\n<gray>Использование: <click:suggest_command:'/schange '><underlined><white>/schange <новый-пароль> <повтор-пароля></white></underlined></click> <gray>(нажми, впишется само)"
+    register-hint: "<gray>Чтобы зарегистрироваться: <white>/sregister <пароль> <повтор-пароля>"
+    login-hint: "<gray>Чтобы войти: <white>/slogin <пароль>"
+    reset-hint: "<gray>Чтобы задать новый пароль: <white>/schange <новый-пароль> <повтор-пароля>"
+
+    already-registered: "<red>У тебя уже есть аккаунт, используй <white>/slogin<red>."
+    not-registered: "<red>У тебя ещё нет аккаунта, сначала зарегистрируйся: <white>/sregister <пароль> <повтор-пароля>"
+    already-logged-in: "<green>Ты уже вошёл в аккаунт."
+    must-login-first: "<red>Сначала нужно войти в аккаунт."
+    usage-register: "<gray>Использование: <white>/sregister <пароль> <повтор-пароля>"
+    usage-login: "<gray>Использование: <white>/slogin <пароль>"
+    usage-change: "<gray>Использование: <white>/schange <новый-пароль> <повтор-пароля>"
+    usage-reset: "<gray>Использование: <white>/spasswordreset <игрок>"
+    passwords-dont-match: "<red>Введённые пароли не совпадают."
+    password-too-short: "<red>Пароль должен быть не короче <white>%min%<red> символов."
+
+    register-success: "<gradient:#3ddc84:#00b894><bold>Регистрация успешна!</bold> Теперь ты видишь, что вокруг."
+    login-success: "<gradient:#3ddc84:#00b894><bold>Вход выполнен!</bold> Добро пожаловать."
+    wrong-password: "<red>Неверный пароль! Осталось <white>%attempts%/%max%<red> попыток."
+    kicked-wrong-password: "<red><bold>Слишком много неверных попыток ввода пароля.</bold>"
+    kicked-timeout: "<red><bold>Время вышло, ты не вошёл в аккаунт.</bold>"
+
+    change-pending: "<yellow>Новый пароль принят. <white>Чтобы подтвердить, напиши <gold>/sconfirm"
+    confirm-nothing-pending: "<red>Нет ожидающих подтверждения изменений пароля."
+    confirm-success-relogin: "<gradient:#3ddc84:#00b894>Пароль изменён. <white>Теперь нужно войти заново через <gold>/slogin"
+    confirm-success: "<gradient:#3ddc84:#00b894>Пароль успешно изменён."
+
+    reset-admin-success: "<green>Пароль игрока %player% сброшен. <gray>При следующем входе ему нужно будет задать новый пароль."
+    reset-player-notify: "<yellow>Твой пароль был сброшен администратором."
+
+    timer-title: "<red><bold>Войди в аккаунт! <white>%seconds%<red> сек. осталось"
+
+  english:
+    only-players: "<red>This command can only be used by players."
+    no-permission: "<red>You do not have permission to use this command."
+    player-not-found: "<red>Player not found: <white>%player%"
+
+    register-prompt: "<gold><bold>Welcome!</bold></gold> <white>You don't have an account yet, you need to register.\n<gray>Usage: <click:suggest_command:'/sregister '><underlined><white>/sregister <password> <password-again></white></underlined></click> <gray>(click to auto-fill)"
+    login-prompt: "<gold><bold>Welcome back!</bold></gold> <white>You need to log in.\n<gray>Usage: <click:suggest_command:'/slogin '><underlined><white>/slogin <password></white></underlined></click> <gray>(click to auto-fill)"
+    reset-prompt: "<yellow>Your password was reset. <white>You need to set a new one.\n<gray>Usage: <click:suggest_command:'/schange '><underlined><white>/schange <new-password> <new-password-again></white></underlined></click> <gray>(click to auto-fill)"
+    register-hint: "<gray>To register: <white>/sregister <password> <password-again>"
+    login-hint: "<gray>To log in: <white>/slogin <password>"
+    reset-hint: "<gray>To set a new password: <white>/schange <new-password> <new-password-again>"
+
+    already-registered: "<red>You already have an account, use <white>/slogin<red>."
+    not-registered: "<red>You don't have an account yet, register first with <white>/sregister <password> <password-again>"
+    already-logged-in: "<green>You are already logged in."
+    must-login-first: "<red>You need to log in first."
+    usage-register: "<gray>Usage: <white>/sregister <password> <password-again>"
+    usage-login: "<gray>Usage: <white>/slogin <password>"
+    usage-change: "<gray>Usage: <white>/schange <new-password> <new-password-again>"
+    usage-reset: "<gray>Usage: <white>/spasswordreset <player>"
+    passwords-dont-match: "<red>The two passwords you entered don't match."
+    password-too-short: "<red>Password must be at least <white>%min%<red> characters."
+
+    register-success: "<gradient:#3ddc84:#00b894><bold>Registration successful!</bold> You can now see your surroundings."
+    login-success: "<gradient:#3ddc84:#00b894><bold>Login successful!</bold> Welcome."
+    wrong-password: "<red>Wrong password! <white>%attempts%/%max%<red> attempts left."
+    kicked-wrong-password: "<red><bold>Too many wrong password attempts.</bold>"
+    kicked-timeout: "<red><bold>Time's up, you did not log in.</bold>"
+
+    change-pending: "<yellow>New password received. <white>Type <gold>/sconfirm<white> to confirm it."
+    confirm-nothing-pending: "<red>You have no pending password change to confirm."
+    confirm-success-relogin: "<gradient:#3ddc84:#00b894>Your password was changed. <white>You now need to log in again with <gold>/slogin"
+    confirm-success: "<gradient:#3ddc84:#00b894>Your password was changed successfully."
+
+    reset-admin-success: "<green>%player%'s password was reset. <gray>They will need to set a new one on next login."
+    reset-player-notify: "<yellow>Your password was reset by an administrator."
+
+    timer-title: "<red><bold>Log in! <white>%seconds%<red> seconds left"
